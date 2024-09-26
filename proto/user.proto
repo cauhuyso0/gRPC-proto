@@ -71,5 +71,5 @@ message LoginResponse {
   int32 status = 1;
   repeated string error = 2;
   string accessToken = 3;
-  string refreshToken = 4
+  string refreshToken = 4;
 }
