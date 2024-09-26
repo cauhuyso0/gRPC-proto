@@ -9,6 +9,7 @@ service UsersService {
   rpc FindOneUser (FindOneUserDto) returns (User) {}
   rpc UpdateUser (UpdateUserDto) returns (User) {}
   rpc QueryUsers (stream PaginationDto) returns (stream Users) {}
+    rpc Login (LoginRequest) returns (LoginResponse) {}
 }
 
 message PaginationDto {
@@ -57,4 +58,18 @@ message User {
 message SocialMedia {
   optional string twitterUri = 1;
   optional string fbUri = 2;
+}
+
+// Login
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string accessToken = 3;
+  string refreshToken = 4
 }
