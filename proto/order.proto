@@ -30,6 +30,8 @@ message Orders{
   repeated Order orders = 1;
 }
 
+message Empty {};
+
 message UpdateOrderDto{
   int32 id = 1;
   int32 amount = 2;
