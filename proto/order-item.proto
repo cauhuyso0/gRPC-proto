@@ -1,0 +1,40 @@
+syntax = "proto3"
+
+package orderItem;
+
+service OrderItemService{
+    rpc CreateOrderItem (CreateOrderItemDto) return (OrderItem){}
+    rpc 
+}
+
+message CreateOrderItemDto{
+    int32 amount = 1;
+    int32 orderId = 2;
+    string serviceName = 3;
+}
+message CreateOrderItemsDto{
+    repeated CreateOrderItemDto createOrderItemsDto = 1;
+}
+
+message OrderItem{
+    int32 id = 1;
+    int32 amount = 2;
+    int32 orderId = 3;
+    string serviceName = 4;
+    string createdAt = 5;
+    string updatedAt = 6;
+}
+
+message OrderItems{
+    repeated OrderItem orderItems = 1;
+}
+
+message UpdateOrderItemDto{
+    int32 amount = 1;
+    int32 orderId = 2;
+    string serviceName = 3;
+}
+
+message DeleteOrderItemDto{
+    int32 id = 1;
+}
