@@ -4,10 +4,11 @@ package order;
 
 service OrderService {
   rpc CreateOrder (CreateOrderDto) returns (Order) {}
-  rpc FindOneOrder (FindOneOrderDto) return (Order) {}
-  rpc FindAllOrder (Empty) return (Orders){}
-  rpc UpdateOrder (UpdateOrderDto) return (Order){}
-  rpc QueryOrders (stream PaginationDto) return (stream Orders) {}
+  rpc FindOneOrder (FindOneOrderDto) returns (Order) {}
+  rpc FindAllOrder (Empty) returns (Orders){}
+  rpc UpdateOrder (UpdateOrderDto) returns (Order){}
+  rpc DeleteOrder (DeleteOrderDto) returns (DeleteOrderResponse){}
+  rpc QueryOrders (stream PaginationDto) returns (stream Orders) {}
 }
 
 message CreateOrderDto {
@@ -39,6 +40,11 @@ message DeleteOrderDto{
   int32 id = 1;
 }
 
+message DeleteOrderResponse{
+  int32 status = 1;
+  repeated string error = 2;
+}
+
 message FindOneOrderDto{
   int32 id = 1;
 }
@@ -49,8 +55,9 @@ message PaginationDto {
 }
 
 service OrderItemService{
-    rpc CreateOrderItem (CreateOrderItemDto) return (OrderItem){}
-    rpc 
+    rpc CreateOrderItem (CreateOrderItemDto) returns (OrderItem){}
+    rpc UpdateOrderItem (UpdateOrderItemDto) returns (OrderItem){}
+    rpc DeleteOrderItem (DeleteOrderItemDto) returns ()
 }
 
 message CreateOrderItemDto{
@@ -83,4 +90,9 @@ message UpdateOrderItemDto{
 
 message DeleteOrderItemDto{
     int32 id = 1;
+}
+
+message DeleteOrderItemResponse{
+  int32 status = 1;
+  repeated string error = 2;
 }
