@@ -57,7 +57,7 @@ message PaginationDto {
 service OrderItemService{
     rpc CreateOrderItem (CreateOrderItemDto) returns (OrderItem){}
     rpc UpdateOrderItem (UpdateOrderItemDto) returns (OrderItem){}
-    rpc DeleteOrderItem (DeleteOrderItemDto) returns ()
+    rpc DeleteOrderItem (DeleteOrderItemDto) returns (DeleteOrderItemResponse){}
 }
 
 message CreateOrderItemDto{
