@@ -15,6 +15,7 @@ message CreateOrderDto {
   int32 amount = 1;
   int32 userId = 2;
   int32 status = 3;
+  repeated CreateOrderItemWithOrderDto orderItems = 4;
 }
 
 message Order{
