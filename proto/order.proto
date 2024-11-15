@@ -98,3 +98,8 @@ message DeleteOrderItemResponse{
   int32 status = 1;
   repeated string error = 2;
 }
+
+message CreateOrderItemWithOrderDto{
+  int32 amount = 1;
+  string serviceName = 2;
+}
