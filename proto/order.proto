@@ -14,7 +14,7 @@ service OrderService {
 message CreateOrderDto {
   int32 amount = 1;
   int32 userId = 2;
-  int32 status = 3;
+  int32 order_status_id = 3;
   repeated CreateOrderItemWithOrderDto orderItems = 4;
 }
 
@@ -22,7 +22,7 @@ message Order{
   int32 id = 1;
   int32 amount = 2;
   int32 userId = 3;
-  int32 status = 4;
+  int32 order_status_id = 4;
   string createdAt = 5;
   string updatedAt = 6;
 }
@@ -36,7 +36,7 @@ message Empty {};
 message UpdateOrderDto{
   int32 id = 1;
   int32 amount = 2;
-  int32 status = 4;
+  int32 order_status_id = 4;
 }
 
 message DeleteOrderDto{
@@ -44,7 +44,7 @@ message DeleteOrderDto{
 }
 
 message DeleteOrderResponse{
-  int32 status = 1;
+  int32 order_status_id = 1;
   repeated string error = 2;
 }
 
@@ -96,7 +96,7 @@ message DeleteOrderItemDto{
 }
 
 message DeleteOrderItemResponse{
-  int32 status = 1;
+  int32 order_status_id = 1;
   repeated string error = 2;
 }
 
